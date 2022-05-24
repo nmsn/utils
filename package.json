@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/nmsn/utils/issues"
   },
-  "homepage": "https://github.com/nmsn/utils#readme"
+  "homepage": "https://github.com/nmsn/utils#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "eslint": "^8.16.0"
+  }
 }

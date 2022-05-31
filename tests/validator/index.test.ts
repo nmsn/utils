@@ -1,5 +1,5 @@
 // const { isValidEnum } = require('./validator').default;
-import { isValidParam, isValidEnum, isValidMoney } from './index';
+import { isValidParam, isValidEnum, isValidMoney } from '@/validator/index';
 
 // TODO 继承
 test('0 is valid param', () => {

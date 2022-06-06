@@ -11,6 +11,7 @@ const isValidParamTestArr = [
   [' ', false],
   ['123', true],
   ['a', true],
+  [null, false],
 ] as [string | number, boolean][];
 
 describe('isValidParam', () => {

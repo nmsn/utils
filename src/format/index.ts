@@ -1,12 +1,16 @@
+import { isValidMoney, isValidArray } from '@/validator';
+
 const EMPTY_TEXT_MARK = '--';
 
-export const formatSectionStr = (data: string[], sign: string) => {
-  const newArr = [...new Set([...data])].filter(Boolean);
+export const formatSectionStr = (data: string | string[], sign: string) => {
+  const filterArr = [...new Set([...(isValidArray(data) ? data : data.split(sign))])].filter(
+    Boolean,
+  );
 
-  return newArr.join(sign);
+  return filterArr.join(sign);
 };
 
-export const arr2Obj = (data: [string, any][]) => {
+const arr2Obj = (data: [string, any][]) => {
   return Object.assign(
     {},
     ...Array.from(
@@ -236,4 +240,30 @@ export const getSuffix = (text: string) => {
   const regex = /(\.)(\w+)$/;
   const result = (text || '').match(regex);
   return result && result.length ? result[2] : '';
+};
+
+export const addThousandSeparator = (num: number | string) => {
+  // 不符合规范的数字
+  if (!isValidMoney(num)) {
+    return null;
+  }
+
+  if (typeof num === 'number') {
+    num = num.toString();
+  }
+
+  const regex = /\B(?=(\d{3})+(?!\d))/g;
+
+  if (num.includes('.')) {
+    const arr = num.split('.');
+    arr[0] = arr[0].replace(regex, ',');
+    return arr.join('.');
+  }
+  return num.replace(regex, ',');
+};
+
+export default {
+  addThousandSeparator,
+  formatSectionStr,
+  arr2Obj,
 };

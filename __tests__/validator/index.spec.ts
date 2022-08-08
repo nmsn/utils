@@ -1,4 +1,4 @@
-import { isValidParam, isValidEnum, isValidMoney } from '@/validator/index';
+import { isValidParam, isValidEnum, isValidMoney, isValidArray } from '@/validator';
 
 const isValidParamTestArr = [
   [0, true],
@@ -57,5 +57,12 @@ const isValidMoneyTestArr = [
 describe('isValidMoney', () => {
   it.each(isValidMoneyTestArr)('"%s" is valid money', (val, bool) => {
     expect(isValidMoney(val)).toBe(bool);
+  });
+});
+
+describe('isValidArray', () => {
+  it('isValidArray', () => {
+    expect(isValidArray([0])).toBeTruthy();
+    expect(isValidArray([])).toBeFalsy();
   });
 });

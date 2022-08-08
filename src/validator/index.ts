@@ -1,5 +1,4 @@
 import regex from '@/regex';
-// import regex from '../regex/index';
 
 const isNumOrStr = (value: number | string): value is string | number => {
   return typeof value === 'number' || typeof value === 'string';
@@ -41,8 +40,13 @@ export const isValidMoney = (value: number | string) => {
   return regex.money.test(val);
 };
 
+export const isValidArray = (value: unknown | unknown[]): value is any[] => {
+  return Array.isArray(value) && !!value?.length;
+};
+
 export default {
   isValidParam,
   isValidEnum,
   isValidMoney,
+  isValidArray,
 };

@@ -4,6 +4,7 @@ module.exports = {
   rootDir: './',
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
+    '^lodash-es$': 'lodash',
   },
   // moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths),
   // 自动清除 Mock

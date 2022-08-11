@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { isEqual } from 'lodash-es';
+
 export const usePreviousValue = (value: any, initialValue = null) => {
   const cache = useRef(initialValue);
   const previousValue = cache.current;
@@ -18,7 +19,7 @@ interface UseDeepEqualIdentifier {
 }
 
 /** 判断 value 是否发生改变 */
-export const useDeepEqualIdentifier: UseDeepEqualIdentifier = value => {
+const useDeepEqualIdentifier: UseDeepEqualIdentifier = value => {
   const identifier = useRef(0);
   const equal = useDeepEqual(value);
 
@@ -28,3 +29,5 @@ export const useDeepEqualIdentifier: UseDeepEqualIdentifier = value => {
 
   return identifier.current;
 };
+
+export default useDeepEqualIdentifier;

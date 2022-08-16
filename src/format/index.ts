@@ -76,4 +76,6 @@ export default {
   addThousandSeparator,
   formatSectionStr,
   arr2Obj,
+  getSuffix,
+  displayWithUnit,
 };

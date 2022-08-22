@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import useDeepEqualIdentifier from '@/hooks/useDeepEqualIdentifier';
+import useDeepEqualIdentifier from '../../hooks/useDeepEqualIdentifier';
 
 it('useDeepEqualIdentifier', async () => {
   const { rerender, result } = renderHook(({ state }) => useDeepEqualIdentifier(state), {

@@ -14,11 +14,6 @@ export default {
       file: 'dist/index.cjs.js',
       format: 'cjs',
     },
-    {
-      file: 'dist/index.umd.js',
-      format: 'umd',
-      name: 'index',
-    },
   ],
   plugins: [typescript(), commonjs(), nodeResolve()],
 };

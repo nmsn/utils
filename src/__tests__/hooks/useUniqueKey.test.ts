@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import useUniqueKey from '@/hooks/useUniqueKey';
+import useUniqueKey from '../../hooks/useUniqueKey';
 
 describe('useUniqueKey', () => {
   it('useUniqueKey', async () => {

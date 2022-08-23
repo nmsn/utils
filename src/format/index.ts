@@ -72,10 +72,10 @@ export const addThousandSeparator = (num: number | string) => {
   return num.replace(regex, ',');
 };
 
-export default {
-  addThousandSeparator,
-  formatSectionStr,
-  arr2Obj,
-  getSuffix,
-  displayWithUnit,
+export const formatDecimals2Percent = (value: number, digit = 2) => {
+  if (value >= 0 && value <= 1) {
+    return `${parseFloat((value * 100).toFixed(digit))}%`;
+  }
+
+  return value;
 };

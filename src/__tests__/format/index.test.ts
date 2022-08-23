@@ -6,7 +6,8 @@ import {
   arr2Obj,
   displayWithUnit,
   getSuffix,
-} from '@/format';
+  formatDecimals2Percent,
+} from '../../format';
 
 it('formatSectionStr', () => {
   expect(formatSectionStr('', '-')).toBe('');
@@ -44,4 +45,11 @@ it('displayWithUnit', () => {
   expect(getSuffix('123.123')).toBe('123');
   expect(getSuffix('123')).toBe('');
   expect(getSuffix('')).toBe('');
+});
+
+it('formatDecimals2Percent', () => {
+  expect(formatDecimals2Percent(0)).toBe('0%');
+  expect(formatDecimals2Percent(1)).toBe('100%');
+  expect(formatDecimals2Percent(0.2)).toBe('20%');
+  expect(formatDecimals2Percent(0.111111)).toBe('11.11%');
 });

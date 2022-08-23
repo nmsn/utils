@@ -1,4 +1,4 @@
-import { isValidParam, isValidEnum, isValidMoney, isValidArray } from '@/validator';
+import { isValidParam, isValidEnum, isValidMoney, isValidArray } from '../../validator';
 
 const isValidParamTestArr = [
   [0, true],

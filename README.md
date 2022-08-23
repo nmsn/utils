@@ -11,7 +11,7 @@
 ## Feature
 
 - format 数据转换
-- hooks 自定义 hooks
+- hooks 自定义 react hooks
 - regex 正则
 - types 自定义 ts 类型
 - validator 校验函数
@@ -25,7 +25,7 @@ npm install @nmsn/utils
 ## Usage
 
 ```ts
-import { format } from '@nmsn/utrils';
+import { format } from '@nmsn/utils';
 
 // '1,000'
 console.log(format.addThousandSeparator(1000));

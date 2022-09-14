@@ -1,3 +1,4 @@
 {
-  "**/*.{js,jsx,ts,tsx,less,json}": ["eslint --cache", "prettier --check"]
+  "**/*.{js,jsx,ts,tsx,less,json}": ["eslint --cache", "prettier --check"],
+  "**/*.{js,jsx,ts,tsx}": ["jest --bail --findRelatedTests"]
 }

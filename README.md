@@ -38,7 +38,6 @@ console.log(format.addThousandSeparator(1000));
     - [ ] formatSubmit
   - [ ] hooks
     - [ ] useReq
-    - [ ] useNoRenderState
   - [ ] regex
   - [ ] types
   - [ ] validator

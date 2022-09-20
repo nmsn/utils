@@ -8,12 +8,16 @@ describe('useNoRenderState', () => {
     const [getState, setState] = result.current;
 
     expect(getState()).toBe(0);
-
     setState(1);
-
     expect(getState()).toBe(1);
+
     rerender();
 
     expect(getState()).toBe(1);
+    setState(cur => {
+      console.log(cur);
+      return (cur || 0) + 1;
+    });
+    expect(getState()).toBe(2);
   });
 });

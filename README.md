@@ -35,11 +35,13 @@ console.log(format.addThousandSeparator(1000));
 
 - [ ] 功能开发
   - [ ] format
+    - [ ] formatSubmit
   - [ ] hooks
+    - [ ] useReq
+    - [ ] useNoRenderState
   - [ ] regex
   - [ ] types
   - [ ] validator
-- [ ] 单元测试
 - [ ] rollup 打包
 
 ## Maintainers

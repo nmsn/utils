@@ -1,0 +1,19 @@
+import { renderHook } from '@testing-library/react';
+import useNoRenderState from '../../hooks/useNoRenderState';
+
+describe('useNoRenderState', () => {
+  it('test useNoRenderState', async () => {
+    const { rerender, result } = renderHook(() => useNoRenderState(0));
+
+    const [getState, setState] = result.current;
+
+    expect(getState()).toBe(0);
+
+    setState(1);
+
+    expect(getState()).toBe(1);
+    rerender();
+
+    expect(getState()).toBe(1);
+  });
+});

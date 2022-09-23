@@ -15,7 +15,6 @@ describe('useNoRenderState', () => {
 
     expect(getState()).toBe(1);
     setState(cur => {
-      console.log(cur);
       return (cur || 0) + 1;
     });
     expect(getState()).toBe(2);

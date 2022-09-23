@@ -1,4 +1,4 @@
-import { isValidMoney, isValidArray } from '@/validator';
+import { isValidMoney, isValidArray, isValidObj } from '@/validator';
 
 const EMPTY_TEXT_MARK = '--';
 
@@ -78,4 +78,13 @@ export const formatDecimals2Percent = (value: number, digit = 2) => {
   }
 
   return value;
+};
+
+export const deleteAttrs = (obj: { [key: string]: any }, attrs: string[]) => {
+  if (!isValidObj(obj)) {
+    throw new Error('param is not a valid object');
+  }
+
+  const entries = Object.entries(obj).filter(([key]) => !attrs.includes(key));
+  return Object.fromEntries(entries);
 };

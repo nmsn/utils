@@ -7,6 +7,7 @@ import {
   displayWithUnit,
   getSuffix,
   formatDecimals2Percent,
+  deleteAttrs,
 } from '../../format';
 
 it('formatSectionStr', () => {
@@ -52,4 +53,10 @@ it('formatDecimals2Percent', () => {
   expect(formatDecimals2Percent(1)).toBe('100%');
   expect(formatDecimals2Percent(0.2)).toBe('20%');
   expect(formatDecimals2Percent(0.111111)).toBe('11.11%');
+});
+
+it('deleteAttrs', () => {
+  expect(deleteAttrs({ a: 1, b: 2 }, ['a'])).toEqual({ b: 2 });
+  expect(deleteAttrs({ b: 2 }, ['a'])).toEqual({ b: 2 });
+  expect(() => deleteAttrs([1, 2], ['0'])).toThrow('param is not a valid object');
 });

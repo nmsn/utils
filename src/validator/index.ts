@@ -43,3 +43,11 @@ export const isValidMoney = (value: number | string) => {
 export const isValidArray = (value: unknown | unknown[]): value is any[] => {
   return Array.isArray(value) && !!value?.length;
 };
+
+export const isObj = (val: unknown): val is { [key: string]: any } => {
+  return Object.prototype.toString.call(val) === '[object Object]';
+};
+
+export const isValidObj = (val: unknown) => {
+  return isObj(val) && Object.keys(val)?.length > 0;
+};

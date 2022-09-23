@@ -1,4 +1,11 @@
-import { isValidParam, isValidEnum, isValidMoney, isValidArray } from '../../validator';
+import {
+  isValidParam,
+  isValidEnum,
+  isValidMoney,
+  isValidArray,
+  isObj,
+  isValidObj,
+} from '../../validator';
 
 const isValidParamTestArr = [
   [0, true],
@@ -39,8 +46,6 @@ describe('isValidEnum', () => {
   });
 });
 
-// ---
-
 const isValidMoneyTestArr = [
   [0, true],
   [1, true],
@@ -64,5 +69,21 @@ describe('isValidArray', () => {
   it('isValidArray', () => {
     expect(isValidArray([0])).toBeTruthy();
     expect(isValidArray([])).toBeFalsy();
+  });
+});
+
+describe('isObj', () => {
+  it('isObj', () => {
+    expect(isObj({ a: 1 })).toBeTruthy();
+    expect(isObj({})).toBeTruthy();
+    expect(isObj(() => 1)).toBeFalsy();
+  });
+});
+
+describe('isValidObj', () => {
+  it('isValidObj', () => {
+    expect(isValidObj({ a: 1 })).toBeTruthy();
+    expect(isValidObj({})).toBeFalsy();
+    expect(isValidObj(() => 1)).toBeFalsy();
   });
 });

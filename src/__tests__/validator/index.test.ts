@@ -5,6 +5,7 @@ import {
   isValidArray,
   isObj,
   isValidObj,
+  isValidNaturalNumber,
 } from '../../validator';
 
 const isValidParamTestArr = [
@@ -86,4 +87,10 @@ describe('isValidObj', () => {
     expect(isValidObj({})).toBeFalsy();
     expect(isValidObj(() => 1)).toBeFalsy();
   });
+});
+
+it('isValidNaturalNumber', () => {
+  expect(isValidNaturalNumber(0)).toBeTruthy();
+  expect(isValidNaturalNumber(1)).toBeTruthy();
+  expect(isValidNaturalNumber(-1)).toBeFalsy();
 });

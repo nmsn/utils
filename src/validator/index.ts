@@ -51,3 +51,12 @@ export const isObj = (val: unknown): val is { [key: string]: any } => {
 export const isValidObj = (val: unknown) => {
   return isObj(val) && Object.keys(val)?.length > 0;
 };
+
+export const isValidNaturalNumber = (num: number) => {
+  const reg = /^(0|[1-9]\d*)$/;
+  const numStr = num.toString();
+  if (reg.test(numStr)) {
+    return true;
+  }
+  return false;
+};

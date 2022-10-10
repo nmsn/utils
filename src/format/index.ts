@@ -88,3 +88,31 @@ export const deleteAttrs = (obj: { [key: string]: any }, attrs: string[]) => {
   const entries = Object.entries(obj).filter(([key]) => !attrs.includes(key));
   return Object.fromEntries(entries);
 };
+
+export const filterObjAttrs = (
+  obj: { [key: string]: any },
+  { filterAttrs = [], deleteAttrs = [] }: { filterAttrs?: string[]; deleteAttrs?: string[] },
+) => {
+  if (!isValidObj(obj)) {
+    throw new Error('Param is not a valid object.');
+  }
+
+  if (isValidArray(filterAttrs) && isValidArray(deleteAttrs)) {
+    const entries = Object.entries(obj).filter(
+      ([key]) => filterAttrs.includes(key) && !deleteAttrs.includes(key),
+    );
+    return Object.fromEntries(entries);
+  }
+
+  if (isValidArray(filterAttrs)) {
+    const entries = Object.entries(obj).filter(([key]) => filterAttrs.includes(key));
+    return Object.fromEntries(entries);
+  }
+
+  if (isValidArray(deleteAttrs)) {
+    const entries = Object.entries(obj).filter(([key]) => !deleteAttrs.includes(key));
+    return Object.fromEntries(entries);
+  }
+};
+
+// export const getInfoFromIdCard = () => {};

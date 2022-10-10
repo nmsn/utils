@@ -8,6 +8,7 @@ import {
   getSuffix,
   formatDecimals2Percent,
   deleteAttrs,
+  filterObjAttrs,
 } from '../../format';
 
 it('formatSectionStr', () => {
@@ -59,4 +60,10 @@ it('deleteAttrs', () => {
   expect(deleteAttrs({ a: 1, b: 2 }, ['a'])).toEqual({ b: 2 });
   expect(deleteAttrs({ b: 2 }, ['a'])).toEqual({ b: 2 });
   expect(() => deleteAttrs([1, 2], ['0'])).toThrow('param is not a valid object');
+});
+
+it('filterObjAttrs', () => {
+  expect(filterObjAttrs({ a: 1, b: 2 }, { filterAttrs: ['a'] })).toEqual({ a: 1 });
+  expect(filterObjAttrs({ a: 1, b: 2 }, { deleteAttrs: ['a'] })).toEqual({ b: 2 });
+  expect(() => filterObjAttrs([], { filterAttrs: ['a'] })).toThrow('Param is not a valid object.');
 });

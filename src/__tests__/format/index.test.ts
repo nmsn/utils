@@ -9,6 +9,7 @@ import {
   formatDecimals2Percent,
   deleteAttrs,
   filterObjAttrs,
+  toFraction,
 } from '../../format';
 
 it('formatSectionStr', () => {
@@ -66,4 +67,11 @@ it('filterObjAttrs', () => {
   expect(filterObjAttrs({ a: 1, b: 2 }, { filterAttrs: ['a'] })).toEqual({ a: 1 });
   expect(filterObjAttrs({ a: 1, b: 2 }, { deleteAttrs: ['a'] })).toEqual({ b: 2 });
   expect(() => filterObjAttrs([], { filterAttrs: ['a'] })).toThrow('Param is not a valid object.');
+});
+
+it('toFraction', () => {
+  expect(toFraction(1, 2)).toEqual('1/2');
+  expect(toFraction(5, 10)).toEqual('1/2');
+  expect(toFraction(0, 10)).toEqual(undefined);
+  expect(toFraction(5, 1)).toEqual(undefined);
 });

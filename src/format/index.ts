@@ -91,28 +91,45 @@ export const deleteAttrs = (obj: { [key: string]: any }, attrs: string[]) => {
 
 export const filterObjAttrs = (
   obj: { [key: string]: any },
-  { filterAttrs = [], deleteAttrs = [] }: { filterAttrs?: string[]; deleteAttrs?: string[] },
+  {
+    filterAttrs = [],
+    deleteAttrs = [],
+    formatAttrs = [],
+  }: {
+    filterAttrs?: string[];
+    deleteAttrs?: string[];
+    formatAttrs?: [string, (data: any) => any][];
+  },
 ) => {
   if (!isValidObj(obj)) {
     throw new Error('Param is not a valid object.');
   }
 
+  let filterResult: [string, any][] = [];
+
   if (isValidArray(filterAttrs) && isValidArray(deleteAttrs)) {
-    const entries = Object.entries(obj).filter(
+    filterResult = Object.entries(obj).filter(
       ([key]) => filterAttrs.includes(key) && !deleteAttrs.includes(key),
     );
-    return Object.fromEntries(entries);
+  } else if (isValidArray(filterAttrs)) {
+    filterResult = Object.entries(obj).filter(([key]) => filterAttrs.includes(key));
+  } else if (isValidArray(deleteAttrs)) {
+    filterResult = Object.entries(obj).filter(([key]) => !deleteAttrs.includes(key));
+  } else {
+    filterResult = Object.entries(obj);
   }
 
-  if (isValidArray(filterAttrs)) {
-    const entries = Object.entries(obj).filter(([key]) => filterAttrs.includes(key));
-    return Object.fromEntries(entries);
-  }
+  const formatResult = filterResult.map(([key, value]) => {
+    const formatKeys = formatAttrs.map(item => item[0]);
+    if (formatKeys.includes(key)) {
+      const format = formatAttrs.find(item => item[0] === key)?.[1];
+      return [key, format?.(value)];
+    }
 
-  if (isValidArray(deleteAttrs)) {
-    const entries = Object.entries(obj).filter(([key]) => !deleteAttrs.includes(key));
-    return Object.fromEntries(entries);
-  }
+    return [key, value];
+  });
+
+  return Object.fromEntries(formatResult);
 };
 
 export const toFraction = (numerator: number, denominator: number) => {

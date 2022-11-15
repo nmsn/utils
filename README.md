@@ -36,6 +36,7 @@ console.log(format.addThousandSeparator(1000));
 - [ ] 功能开发
   - [ ] format
     - [ ] formatSubmit
+    - [ ] getTwoWayDataFromMapOrObj
   - [ ] hooks
     - [ ] useReq
     - [ ] useScrollData

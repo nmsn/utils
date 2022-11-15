@@ -6,6 +6,8 @@ import {
   isObj,
   isValidObj,
   isValidNaturalNumber,
+  isMap,
+  isValidMap,
 } from '../../validator';
 
 const isValidParamTestArr = [
@@ -93,4 +95,18 @@ it('isValidNaturalNumber', () => {
   expect(isValidNaturalNumber(0)).toBeTruthy();
   expect(isValidNaturalNumber(1)).toBeTruthy();
   expect(isValidNaturalNumber(-1)).toBeFalsy();
+});
+
+it('isMap', () => {
+  expect(isMap(null)).toBeFalsy();
+  expect(isMap(undefined)).toBeFalsy();
+  expect(isMap([])).toBeFalsy();
+  expect(isMap({})).toBeFalsy();
+  expect(isMap(new Map())).toBeTruthy();
+  expect(isMap(new Map([[1, 1]]))).toBeTruthy();
+});
+
+it('isValidMap', () => {
+  expect(isValidMap(new Map())).toBeFalsy();
+  expect(isValidMap(new Map([[1, 1]]))).toBeTruthy();
 });

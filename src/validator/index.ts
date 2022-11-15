@@ -60,3 +60,11 @@ export const isValidNaturalNumber = (num: number) => {
   }
   return false;
 };
+
+export const isMap = (val: unknown) => {
+  return Object.prototype.toString.call(val) === '[object Map]';
+};
+
+export const isValidMap = (val: unknown): val is Map<unknown, unknown> => {
+  return isMap(val) && (val as Map<unknown, unknown>)?.size > 0;
+};

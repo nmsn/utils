@@ -37,6 +37,7 @@ console.log(format.addThousandSeparator(1000));
   - [ ] format
     - [ ] formatSubmit
     - [ ] getTwoWayDataFromMapOrObj
+    - [ ] formatFile
   - [ ] hooks
     - [ ] useReq
     - [ ] useScrollData

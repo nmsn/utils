@@ -10,6 +10,7 @@ import {
   deleteAttrs,
   filterObjAttrs,
   toFraction,
+  nameCaseTransform,
 } from '../../format';
 
 it('formatSectionStr', () => {
@@ -82,4 +83,11 @@ it('toFraction', () => {
   expect(toFraction(5, 10)).toEqual('1/2');
   expect(toFraction(0, 10)).toEqual(undefined);
   expect(toFraction(5, 1)).toEqual(undefined);
+});
+
+it('nameCaseTransform', () => {
+  expect(nameCaseTransform('aAa', 'lowerCamel')).toEqual('aAa');
+  expect(nameCaseTransform('aAa', 'upperCamel')).toEqual('AAa');
+  expect(nameCaseTransform('aAa', 'snake')).toEqual('a_aa');
+  expect(nameCaseTransform('aAa', 'kebab')).toEqual('a-aa');
 });

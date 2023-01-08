@@ -11,6 +11,7 @@ import {
   filterObjAttrs,
   toFraction,
   nameCaseTransform,
+  removeMultipleStrLeadingSpace,
 } from '../../format';
 
 it('formatSectionStr', () => {
@@ -90,4 +91,8 @@ it('nameCaseTransform', () => {
   expect(nameCaseTransform('aAa', 'upperCamel')).toEqual('AAa');
   expect(nameCaseTransform('aAa', 'snake')).toEqual('a_aa');
   expect(nameCaseTransform('aAa', 'kebab')).toEqual('a-aa');
+});
+
+it('removeMultipleStrLeadingSpace', () => {
+  expect(removeMultipleStrLeadingSpace('')).toEqual('');
 });

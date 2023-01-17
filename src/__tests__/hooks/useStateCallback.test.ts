@@ -17,13 +17,14 @@ describe('useStateCallback', () => {
     });
 
     expect(fn).toBeCalledTimes(1);
-    fn.mockResolvedValue(1);
+
+    expect(fn.mock.results[0].value).toBe(1);
 
     act(() => {
       setStateCallback(10, fn);
     });
 
     expect(fn).toBeCalledTimes(2);
-    fn.mockResolvedValue(10);
+    expect(fn.mock.results[1].value).toBe(10);
   });
 });

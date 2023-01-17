@@ -8,7 +8,7 @@ describe('useStateCallback', () => {
       initialProps: { state: 0 },
     });
 
-    const [state, setStateCallback] = result.current;
+    const [, setStateCallback] = result.current;
 
     expect(fn).toBeCalledTimes(0);
 

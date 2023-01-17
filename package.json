@@ -23,7 +23,8 @@
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "dumi:dev": "dumi dev"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "@types/react": "^18.0.14",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
+    "dumi": "^2.1.3",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",

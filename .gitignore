@@ -2,3 +2,7 @@ node_modules/
 .eslintcache
 dist/
 coverage/
+
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production

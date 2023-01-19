@@ -1,7 +1,7 @@
 ---
 hero:
-  title: Site
-  description:
+  title: Utils
+  description: Tool functions and hooks.
   actions:
     - text: Hello
       link: /
@@ -19,4 +19,3 @@ features:
     description: Put ! description here
 ---
 
-dumi-demo

@@ -5,7 +5,7 @@ toc: false
 
 ## addThousandSeparator
 
-`addThousandSeparator` 用于给金额增加逗号分隔符（只针对整数部分）
+用于给金额增加逗号分隔符（只针对整数部分）
 
 ### 特点
 

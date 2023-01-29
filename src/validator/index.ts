@@ -52,6 +52,10 @@ export const isValidObj = (val: unknown) => {
   return isObj(val) && Object.keys(val)?.length > 0;
 };
 
+export const isValidNumber = (val: unknown) => {
+  return typeof val === 'number' && !isNaN(val);
+};
+
 export const isValidNaturalNumber = (num: number) => {
   const reg = /^(0|[1-9]\d*)$/;
   const numStr = num.toString();

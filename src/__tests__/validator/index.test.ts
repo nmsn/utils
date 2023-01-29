@@ -5,6 +5,7 @@ import {
   isValidArray,
   isObj,
   isValidObj,
+  isValidNumber,
   isValidNaturalNumber,
   isMap,
   isValidMap,
@@ -89,6 +90,17 @@ describe('isValidObj', () => {
     expect(isValidObj({})).toBeFalsy();
     expect(isValidObj(() => 1)).toBeFalsy();
   });
+});
+
+it('isValidNumber', () => {
+  expect(isValidNumber(0)).toBeTruthy();
+  expect(isValidNumber(1)).toBeTruthy();
+  expect(isValidNumber(123.3)).toBeTruthy();
+  expect(isValidNumber(Number.MAX_VALUE)).toBeTruthy();
+  expect(isValidNumber(Number.MIN_VALUE)).toBeTruthy();
+  expect(isValidNumber('123.3')).toBeFalsy();
+  expect(isValidNumber(undefined)).toBeFalsy();
+  expect(isValidNumber(null)).toBeFalsy();
 });
 
 it('isValidNaturalNumber', () => {

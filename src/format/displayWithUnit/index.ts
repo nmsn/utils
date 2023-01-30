@@ -14,7 +14,7 @@ const defaultOption = {
   isDisplayUnitInValid: false,
 };
 
-export const displayWithUnit = (
+const displayWithUnit = (
   num: number | string | undefined | null,
   unit: string,
   option?: Option,

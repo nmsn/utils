@@ -9,6 +9,7 @@ import {
   isValidNaturalNumber,
   isMap,
   isValidMap,
+  isValidStr,
 } from '../../validator';
 
 const isValidParamTestArr = [
@@ -121,4 +122,11 @@ it('isMap', () => {
 it('isValidMap', () => {
   expect(isValidMap(new Map())).toBeFalsy();
   expect(isValidMap(new Map([[1, 1]]))).toBeTruthy();
+});
+
+it('isValidStr', () => {
+  expect(isMap(null)).toBeFalsy();
+  expect(isMap(undefined)).toBeFalsy();
+  expect(isValidStr('')).toBeFalsy();
+  expect(isValidStr('1')).toBeTruthy();
 });

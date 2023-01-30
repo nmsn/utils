@@ -72,3 +72,7 @@ export const isMap = (val: unknown) => {
 export const isValidMap = (val: unknown): val is Map<unknown, unknown> => {
   return isMap(val) && (val as Map<unknown, unknown>)?.size > 0;
 };
+
+export const isValidStr = (val: unknown) => {
+  return typeof val === 'string' && val;
+};

@@ -23,16 +23,16 @@ toc: false
 ```typescript
 export type Options = { emptyMark: string, isZeroValid?: boolean, isDisplayUnitInValid?: boolean };
 
-const data = displayWithUnit(num: string | number, unit: string, option: Options);
+const data = displayWithUnit(num: string | number, unit: string, options: Options);
 ```
 
 ### Params
 
-| 参数   | 说明                   | 类型               | 默认值 |
-| ------ | ---------------------- | ------------------ | ------ |
-| num    | 入参，待处理的字段     | `number \| string` | -      |
-| unit   | 单位                   | `string`           | -      |
-| option | 数据不存在时展示的内容 | `Options`          | -      |
+| 参数   | 说明               | 类型               | 默认值 |
+| ------ | ------------------ | ------------------ | ------ |
+| num    | 入参，待处理的字段 | `number \| string` | -      |
+| unit   | 单位               | `string`           | -      |
+| options | 配置项             | `Options`          | -      |
 
 ### Options
 
@@ -45,6 +45,6 @@ const data = displayWithUnit(num: string | number, unit: string, option: Options
 
 ### Result
 
-| 参数 | 说明       | 类型     | 默认值 |
-| ---- | ---------- | -------- | ------ |
+| 参数 | 说明     | 类型     | 默认值 |
+| ---- | -------- | -------- | ------ |
 | data | 展示字段 | `string` | -      |

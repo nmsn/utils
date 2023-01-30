@@ -1,11 +1,17 @@
-## arr2Obj
+---
+title: formatDecimals2Percent
+toc: false
+---
 
-数组转化为对象
+## formatDecimals2Percent
 
-## 代码演示
+数字转化百分比
 
-### 基础用法
-
-<code src="./demo/demo1.tsx" />
+<code src="./demo.tsx"></code>
 
 ## API
+
+```typescript
+const result = formatDecimals2Percent(num: number, digit: number);
+// result string
+```

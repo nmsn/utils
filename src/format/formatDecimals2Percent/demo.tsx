@@ -2,12 +2,12 @@ import React from 'react';
 import { formatDecimals2Percent } from '@nmsn/utils';
 
 export default () => {
-  const source = 1;
-  const result = formatDecimals2Percent(source);
   return (
     <div>
-      <p>source: {JSON.stringify(source)}</p>
-      <p>result: {JSON.stringify(result)}</p>
+      <p>source: {JSON.stringify(0.1)}</p>
+      <p>result: {JSON.stringify(formatDecimals2Percent(0.1))}</p>
+      <p>source2: {JSON.stringify(1)}</p>
+      <p>result2: {JSON.stringify(formatDecimals2Percent(1))}</p>
     </div>
   );
 };

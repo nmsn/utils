@@ -2,17 +2,17 @@ import { toValidDecimal } from '@/format';
 
 type Options = {
   digit?: number;
-  isThresholdPercent?: boolean;
+  isThresholdInt?: boolean;
 };
 
 const formatDecimals2Percent = (value: number, options?: Options) => {
-  const { digit = 2, isThresholdPercent = true } = options ?? {};
+  const { digit = 2, isThresholdInt = true } = options ?? {};
 
   if (!(value >= 0 && value <= 1)) {
     throw new Error('Input invalid param');
   }
 
-  if ((value === 0 || value === 1) && isThresholdPercent) {
+  if ((value === 0 || value === 1) && isThresholdInt) {
     return value.toString();
   }
 

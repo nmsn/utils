@@ -1,5 +1,5 @@
 import React from 'react';
-import { displayWithUnit } from '@nmsn/utils';
+import displayWithUnit from '@nmsn/utils';
 
 export default () => {
   const source = [1000, '元'];

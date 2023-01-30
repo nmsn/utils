@@ -1,20 +1,69 @@
 const EMPTY_TEXT_MARK = '--';
 
-const displayWithUnit = (num: number | string, unit: string, emptyMark = EMPTY_TEXT_MARK) => {
-  if (typeof num === 'number' && (num || num === 0)) {
-    return `${num}${unit}`;
-  }
+import { isValidStr, isValidNumber } from '@/validator';
 
-  if (typeof num === 'string' && num) {
-    // 返回的数据里面已经有了单位
-    if (num.endsWith(unit)) {
-      return num;
+type Option = {
+  emptyMark?: string;
+  isZeroValid?: boolean;
+  isDisplayUnitInValid?: boolean;
+};
+
+const defaultOption = {
+  emptyMark: EMPTY_TEXT_MARK,
+  isZeroValid: true,
+  isDisplayUnitInValid: false,
+};
+
+export const displayWithUnit = (
+  num: number | string | undefined | null,
+  unit: string,
+  option?: Option,
+) => {
+  const {
+    emptyMark = EMPTY_TEXT_MARK,
+    isZeroValid,
+    isDisplayUnitInValid,
+  } = { ...defaultOption, ...option };
+
+  let validNum = undefined;
+
+  if (typeof num === 'string') {
+    if (!isValidStr(num)) {
+      validNum = undefined;
     }
 
-    return `${num}${unit}`;
+    const temp = num.endsWith(unit) ? +num.split(unit)[0] : +num;
+
+    if (isValidNumber(temp)) {
+      validNum = temp;
+    } else {
+      validNum = undefined;
+    }
   }
 
-  return emptyMark;
+  if (typeof num === 'number' && isValidNumber(num)) {
+    if (isValidNumber(num)) {
+      validNum = num;
+    } else {
+      validNum = undefined;
+    }
+  }
+
+  // validNum is valid number or undefined null
+
+  if (validNum === 0 && isZeroValid) {
+    if (isZeroValid) {
+      return `${validNum}${unit}`;
+    }
+
+    return isDisplayUnitInValid ? `${emptyMark}${unit}` : emptyMark;
+  }
+
+  if (validNum) {
+    return `${validNum}${unit}`;
+  }
+
+  return isDisplayUnitInValid ? `${emptyMark}${unit}` : emptyMark;
 };
 
 export default displayWithUnit;

@@ -52,11 +52,11 @@ export const isValidObj = (val: unknown) => {
   return isObj(val) && Object.keys(val)?.length > 0;
 };
 
-export const isValidNumber = (val: unknown) => {
+export const isValidNumber = (val: unknown): val is number => {
   return typeof val === 'number' && !isNaN(val);
 };
 
-export const isValidNaturalNumber = (num: number) => {
+export const isValidNaturalNumber = (num: number): num is number => {
   const reg = /^(0|[1-9]\d*)$/;
   const numStr = num.toString();
   if (reg.test(numStr)) {
@@ -65,7 +65,7 @@ export const isValidNaturalNumber = (num: number) => {
   return false;
 };
 
-export const isMap = (val: unknown) => {
+export const isMap = (val: unknown): val is Map<unknown, unknown> => {
   return Object.prototype.toString.call(val) === '[object Map]';
 };
 
@@ -73,6 +73,6 @@ export const isValidMap = (val: unknown): val is Map<unknown, unknown> => {
   return isMap(val) && (val as Map<unknown, unknown>)?.size > 0;
 };
 
-export const isValidStr = (val: unknown) => {
-  return typeof val === 'string' && val;
+export const isValidStr = (val: unknown): val is string => {
+  return typeof val === 'string' && !!val;
 };

@@ -1,4 +1,6 @@
-const nameCaseTransform = (text: string, type: 'lowerCamel' | 'upperCamel' | 'snake' | 'kebab') => {
+type NameType = 'lowerCamel' | 'upperCamel' | 'snake' | 'kebab';
+
+const nameCaseTransform = (text: string, type: NameType) => {
   const textBlock = (() => {
     if (text.includes('-')) {
       return text.split('-');

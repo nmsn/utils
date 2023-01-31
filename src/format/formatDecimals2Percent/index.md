@@ -9,7 +9,7 @@ toc: false
 
 <code src="./demo.tsx"></code>
 
-## API
+### API
 
 ```typescript
 type Options = {

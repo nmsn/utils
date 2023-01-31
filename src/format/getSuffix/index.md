@@ -1,11 +1,29 @@
-## arr2Obj
+---
+title: getSuffix
+toc: false
+---
 
-数组转化为对象
+## getSuffix
 
-## 代码演示
+获取文件名后缀
 
-### 基础用法
+<code src="./demo.tsx"></code>
 
-<code src="./demo/demo1.tsx" />
+### API
 
-## API
+```typescript
+const data = getSuffix(name: string);
+```
+
+### Params
+
+| 参数 | 说明         | 类型     | 默认值 |
+| ---- | ------------ | -------- | ------ |
+| name | 入参，文件名 | `string` | -      |
+
+
+### Result
+
+| 参数 | 说明     | 类型     | 默认值 |
+| ---- | -------- | -------- | ------ |
+| data | 返回的文件后缀 | `string` | ''      |

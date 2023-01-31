@@ -76,3 +76,17 @@ export const isValidMap = (val: unknown): val is Map<unknown, unknown> => {
 export const isValidStr = (val: unknown): val is string => {
   return typeof val === 'string' && !!val;
 };
+
+export const isSameCharacterStr = (str: string, char?: string) => {
+  if (!isValidStr(str)) {
+    throw new Error('Input invalid param');
+  }
+
+  const set = new Set(str);
+
+  if (!char) {
+    return set.size === 1;
+  }
+
+  return set.size === 1 && char.length === 1 && set.has(char);
+};

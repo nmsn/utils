@@ -13,5 +13,5 @@ it('filterObjAttrs', () => {
     b: 2,
     c: 3,
   });
-  expect(() => filterObjAttrs([], { filterAttrs: ['a'] })).toThrowError();
+  expect(() => filterObjAttrs([], { filterAttrs: ['a'] })).toThrow();
 });

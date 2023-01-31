@@ -1,16 +1,14 @@
 import { isValidArray, isValidObj } from '@/validator';
 
+type Options = {
+  filterAttrs?: string[];
+  deleteAttrs?: string[];
+  formatAttrs?: [string, (data: any) => any][];
+};
+
 const filterObjAttrs = (
   obj: { [key: string]: any },
-  {
-    filterAttrs = [],
-    deleteAttrs = [],
-    formatAttrs = [],
-  }: {
-    filterAttrs?: string[];
-    deleteAttrs?: string[];
-    formatAttrs?: [string, (data: any) => any][];
-  },
+  { filterAttrs = [], deleteAttrs = [], formatAttrs = [] }: Options,
 ) => {
   if (!isValidObj(obj)) {
     throw new Error('Param is not a valid object.');

@@ -1,11 +1,30 @@
-## arr2Obj
+---
+title: removeMultipleStrLeadingSpace
+toc: false
+---
 
-数组转化为对象
+## removeMultipleStrLeadingSpace
 
-## 代码演示
+一处多行文本开头的多余空格
+通常用于字符串生成代码片段的情况下使用
 
-### 基础用法
+<code src="./demo.tsx"></code>
 
-<code src="./demo/demo1.tsx" />
+### API
 
-## API
+```typescript
+const data = removeMultipleStrLeadingSpace(str: string, keepBlankRow: boolean);
+```
+
+### Params
+
+| 参数         | 说明           | 类型      | 默认值 |
+| ------------ | -------------- | --------- | ------ |
+| str          | 入字符串       | `string`  | -      |
+| keepBlankRow | 是否保存换行符 | `boolean` | 'true' |
+
+### Result
+
+| 参数 | 说明           | 类型     | 默认值 |
+| ---- | -------------- | -------- | ------ |
+| data | 转化后的字符串 | `string` | ''     |

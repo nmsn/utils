@@ -1,4 +1,4 @@
-import { renderHook, act, waitFor } from '@testing-library/react';
+import { renderHook, act } from '@testing-library/react';
 import useLoading from '../../hooks/useLoading';
 
 export function request(data: { req: number } = { req: 1 }) {

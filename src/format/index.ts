@@ -1,6 +1,5 @@
 export { default as addThousandSeparator } from './addThousandSeparator';
 export { default as arr2Obj } from './arr2Obj';
-export { default as deleteAttrs } from './deleteAttrs';
 export { default as displayWithUnit } from './displayWithUnit';
 export { default as filterObjAttrs } from './filterObjAttrs';
 export { default as formatDecimals2Percent } from './formatDecimals2Percent';
@@ -9,3 +8,4 @@ export { default as getSuffix } from './getSuffix';
 export { default as nameCaseTransform } from './nameCaseTransform';
 export { default as removeMultipleStrLeadingSpace } from './removeMultipleStrLeadingSpace';
 export { default as toFraction } from './toFraction';
+export { default as toValidDecimal } from './toValidDecimal';

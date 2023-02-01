@@ -1,13 +1,21 @@
 import { renderHook, act } from '@testing-library/react';
 import useLoading from '../../hooks/useLoading';
 
-export function request(data: { req: number } = { req: 1 }) {
+type ResType = {
+  data: any;
+  flag: boolean;
+  errCode?: string | number;
+  errMessage?: string;
+};
+
+export function request(params: { flag: boolean; data: any }): Promise<ResType> {
   return new Promise((resolve, reject) =>
     setTimeout(() => {
-      if (data.req === 0) {
-        reject({ flag: false });
+      const { flag = true, data = {} } = params;
+      if (flag) {
+        resolve({ flag: true, data });
       } else {
-        resolve({ flag: true });
+        reject({ flag: false, data, errCode: 1, errMsg: 'Request error.' });
       }
     }, 1000),
   );
@@ -24,8 +32,6 @@ describe('useLoading', () => {
 
   const setUp = ({ service, onCallback, onErrCallback, onSuccessCallback }: any) =>
     renderHook(() => useLoading({ service, onCallback, onErrCallback, onSuccessCallback }));
-
-  // let hook: any;
 
   it('test useLoading', async () => {
     const hook = setUp({

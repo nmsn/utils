@@ -9,7 +9,7 @@ toc: false
 
 <code src="./demo.tsx"></code>
 
-## API
+### API
 
 ```typescript
 const data = toFraction(numerator: number, denominator: number, toStr?: boolean);

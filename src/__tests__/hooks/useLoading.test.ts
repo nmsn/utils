@@ -13,7 +13,7 @@ export function request(data: { req: number } = { req: 1 }) {
   );
 }
 
-describe('useMount', () => {
+describe('useLoading', () => {
   beforeAll(() => {
     jest.useFakeTimers();
   });

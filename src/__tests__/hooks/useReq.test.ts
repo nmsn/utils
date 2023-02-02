@@ -2,13 +2,6 @@ import { renderHook, act } from '@testing-library/react';
 import useReq from '../../hooks/useReq';
 import { request } from '../hooks/useLoading.test';
 
-type ResType = {
-  data: any;
-  flag: boolean;
-  errCode?: string | number;
-  errMessage?: string;
-};
-
 describe('useLoading', () => {
   beforeAll(() => {
     jest.useFakeTimers();

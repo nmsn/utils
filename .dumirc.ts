@@ -1,4 +1,3 @@
-import { components } from './.dumi/tmp/dumi/meta/atoms';
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
@@ -11,21 +10,9 @@ export default defineConfig({
       { title: 'validator', link: '/validator' },
       { title: 'GitHub', link: 'https://github.com/nmsn/utils.git' },
     ],
-    // sidebar: {
-    //   '/format': [
-    //     {
-    //       title: '123',
-    //       children: [
-    //         {
-    //           title: '3123',
-    //           link: '/component/format/arr2Obj',
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // },
     footer: `Copyright © ${new Date().getFullYear()} nmsn`,
   },
+  outputPath: 'docs-dist',
   resolve: {
     docDirs: ['docs'],
     atomDirs: [

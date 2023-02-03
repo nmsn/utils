@@ -1,76 +1,11 @@
-import { money } from '@/regex';
-
-const isNumOrStr = (value: number | string): value is string | number => {
-  return typeof value === 'number' || typeof value === 'string';
-};
-
-/** 校验是否为有效数据
- * @param {number|string} value
- * @returns {boolean} Judge value is valid param.
- */
-export const isValidParam = (value: number | string): boolean => {
-  if (!isNumOrStr(value)) {
-    return false;
-  }
-
-  if (typeof value === 'number' && isNaN(value)) {
-    return false;
-  }
-
-  if (typeof value === 'string' && value.trim() === '') {
-    return false;
-  }
-
-  return true;
-};
-
-export const isValidEnum = (value: number | string) => {
-  if (typeof value === 'string') {
-    return isValidParam(value);
-  }
-
-  return typeof value === 'number' && value >= 0;
-};
-
-export const isValidMoney = (value: number | string) => {
-  if (typeof value === 'number' && [Infinity, -Infinity].includes(value)) {
-    return false;
-  }
-  const val = typeof value === 'string' ? value : value.toString();
-  return money.test(val);
-};
-
-export const isValidArray = (value: unknown | unknown[]): value is any[] => {
-  return Array.isArray(value) && !!value?.length;
-};
-
-export const isValidNumber = (val: unknown): val is number => {
-  return typeof val === 'number' && !isNaN(val);
-};
-
-export const isValidNaturalNumber = (num: number): num is number => {
-  const reg = /^(0|[1-9]\d*)$/;
-  const numStr = num.toString();
-  if (reg.test(numStr)) {
-    return true;
-  }
-  return false;
-};
-
-export const isValidStr = (val: unknown): val is string => {
-  return typeof val === 'string' && !!val;
-};
-
-export const isSameCharacterStr = (str: string, char?: string) => {
-  if (!isValidStr(str)) {
-    throw new Error('Input invalid param');
-  }
-
-  const set = new Set(str);
-
-  if (!char) {
-    return set.size === 1;
-  }
-
-  return set.size === 1 && char.length === 1 && set.has(char);
-};
+export { default as isObj } from './isObj';
+export { default as isValidObj } from './isValidObj';
+export { default as isMap } from './isMap';
+export { default as isValidMap } from './isValidMap';
+export { default as isValidNumber } from './isValidNumber';
+export { default as isValidString } from './isValidString';
+export { default as isValidArray } from './isValidArray';
+export { default as isSameCharString } from './isSameCharString';
+export { default as isValidEnumValue } from './isValidEnumValue';
+export { default as isValidMoney } from './isValidMoney';
+export { default as isValidNaturalNumber } from './isValidNaturalNumber';

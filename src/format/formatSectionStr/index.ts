@@ -1,7 +1,7 @@
-import { isValidArray, isValidStr } from '@/validator';
+import { isValidArray, isValidString } from '@/validator';
 
 const formatSectionStr = (data: string | (string | number)[], sign: string) => {
-  if (!isValidArray(data) && !isValidStr(data)) {
+  if (!isValidArray(data) && !isValidString(data)) {
     throw new Error('Input invalid param');
   }
 

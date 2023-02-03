@@ -1,6 +1,6 @@
 const EMPTY_TEXT_MARK = '--';
 
-import { isValidStr, isValidNumber } from '@/validator';
+import { isValidString, isValidNumber } from '@/validator';
 
 type Option = {
   emptyMark?: string;
@@ -28,7 +28,7 @@ const displayWithUnit = (
   let validNum = undefined;
 
   if (typeof num === 'string') {
-    if (!isValidStr(num)) {
+    if (!isValidString(num)) {
       validNum = undefined;
     }
 

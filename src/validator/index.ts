@@ -44,14 +44,6 @@ export const isValidArray = (value: unknown | unknown[]): value is any[] => {
   return Array.isArray(value) && !!value?.length;
 };
 
-export const isObj = (val: unknown): val is { [key: string]: any } => {
-  return Object.prototype.toString.call(val) === '[object Object]';
-};
-
-export const isValidObj = (val: unknown) => {
-  return isObj(val) && Object.keys(val)?.length > 0;
-};
-
 export const isValidNumber = (val: unknown): val is number => {
   return typeof val === 'number' && !isNaN(val);
 };
@@ -63,14 +55,6 @@ export const isValidNaturalNumber = (num: number): num is number => {
     return true;
   }
   return false;
-};
-
-export const isMap = (val: unknown): val is Map<unknown, unknown> => {
-  return Object.prototype.toString.call(val) === '[object Map]';
-};
-
-export const isValidMap = (val: unknown): val is Map<unknown, unknown> => {
-  return isMap(val) && (val as Map<unknown, unknown>)?.size > 0;
 };
 
 export const isValidStr = (val: unknown): val is string => {

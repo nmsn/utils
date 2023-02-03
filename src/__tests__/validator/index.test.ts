@@ -3,12 +3,8 @@ import {
   isValidEnum,
   isValidMoney,
   isValidArray,
-  isObj,
-  isValidObj,
   isValidNumber,
   isValidNaturalNumber,
-  isMap,
-  isValidMap,
   isValidStr,
 } from '../../validator';
 
@@ -77,22 +73,6 @@ describe('isValidArray', () => {
   });
 });
 
-describe('isObj', () => {
-  it('isObj', () => {
-    expect(isObj({ a: 1 })).toBeTruthy();
-    expect(isObj({})).toBeTruthy();
-    expect(isObj(() => 1)).toBeFalsy();
-  });
-});
-
-describe('isValidObj', () => {
-  it('isValidObj', () => {
-    expect(isValidObj({ a: 1 })).toBeTruthy();
-    expect(isValidObj({})).toBeFalsy();
-    expect(isValidObj(() => 1)).toBeFalsy();
-  });
-});
-
 it('isValidNumber', () => {
   expect(isValidNumber(0)).toBeTruthy();
   expect(isValidNumber(1)).toBeTruthy();
@@ -110,23 +90,7 @@ it('isValidNaturalNumber', () => {
   expect(isValidNaturalNumber(-1)).toBeFalsy();
 });
 
-it('isMap', () => {
-  expect(isMap(null)).toBeFalsy();
-  expect(isMap(undefined)).toBeFalsy();
-  expect(isMap([])).toBeFalsy();
-  expect(isMap({})).toBeFalsy();
-  expect(isMap(new Map())).toBeTruthy();
-  expect(isMap(new Map([[1, 1]]))).toBeTruthy();
-});
-
-it('isValidMap', () => {
-  expect(isValidMap(new Map())).toBeFalsy();
-  expect(isValidMap(new Map([[1, 1]]))).toBeTruthy();
-});
-
 it('isValidStr', () => {
-  expect(isMap(null)).toBeFalsy();
-  expect(isMap(undefined)).toBeFalsy();
   expect(isValidStr('')).toBeFalsy();
   expect(isValidStr('1')).toBeTruthy();
 });

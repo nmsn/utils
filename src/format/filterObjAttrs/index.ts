@@ -1,4 +1,5 @@
-import { isValidArray, isValidObj } from '@/validator';
+import { isValidArray } from '@/validator';
+import { isValidObj } from '@/validator/index.new';
 
 type Options = {
   filterAttrs?: string[];

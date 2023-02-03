@@ -1,4 +1,4 @@
-import { toValidDecimal } from '@/format';
+import toValidDecimal from '../toValidDecimal';
 
 type Options = {
   digit?: number;

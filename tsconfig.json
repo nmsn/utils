@@ -19,6 +19,6 @@
     "skipLibCheck": true,
     "declaration": true
   },
-  "include": ["src/**/*", ".dumi/**/*"],
+  "include": ["src/**/*", ".dumi/**/*", "typings.d.ts"],
   "exclude": ["node_modules", "dist", "**/__tests__/**/*"]
 }

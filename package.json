@@ -24,7 +24,8 @@
     "test": "jest",
     "prepare": "husky install",
     "build": "rollup --config",
-    "dumi:dev": "dumi dev"
+    "dumi:dev": "dumi dev",
+    "dumi:build": "dumi build"
   },
   "repository": {
     "type": "git",

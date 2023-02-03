@@ -1,4 +1,4 @@
-import removeMultipleStrLeadingSpace from './index';
+import removeMultipleStrLeadingSpace from './';
 
 it('removeMultipleStrLeadingSpace', () => {
   const text = `

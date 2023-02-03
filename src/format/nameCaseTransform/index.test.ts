@@ -1,4 +1,4 @@
-import nameCaseTransform from './index';
+import nameCaseTransform from './';
 
 it('nameCaseTransform', () => {
   expect(nameCaseTransform('aAa', 'lowerCamel')).toEqual('aAa');

@@ -1,4 +1,4 @@
-import displayWithUnit from './index';
+import displayWithUnit from './';
 
 it('displayWithUnit', () => {
   expect(displayWithUnit('123', '元')).toBe('123元');

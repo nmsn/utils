@@ -1,4 +1,4 @@
-import toValidDecimal from './index';
+import toValidDecimal from './';
 
 it('toValidDecimal', () => {
   expect(() => toValidDecimal(NaN)).toThrow();

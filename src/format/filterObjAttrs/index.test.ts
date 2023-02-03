@@ -1,4 +1,4 @@
-import filterObjAttrs from './index';
+import filterObjAttrs from './';
 
 it('filterObjAttrs', () => {
   expect(filterObjAttrs({ a: 1, b: 2, c: 3 }, { filterAttrs: ['a'] })).toEqual({ a: 1 });

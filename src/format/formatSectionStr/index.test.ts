@@ -1,4 +1,4 @@
-import formatSectionStr from './index';
+import formatSectionStr from './';
 
 it('formatSectionStr', () => {
   expect(() => formatSectionStr('', '-')).toThrow();

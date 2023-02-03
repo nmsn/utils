@@ -1,4 +1,4 @@
-import getSuffix from './index';
+import getSuffix from './';
 
 it('getSuffix', () => {
   expect(getSuffix('123.123')).toBe('123');

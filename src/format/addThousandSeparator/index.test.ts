@@ -1,4 +1,4 @@
-import addThousandSeparator from './index';
+import addThousandSeparator from './';
 
 it('addThousandSeparator', () => {
   expect(addThousandSeparator(NaN)).toBe('0');

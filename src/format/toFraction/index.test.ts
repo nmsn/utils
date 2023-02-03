@@ -1,4 +1,4 @@
-import toFraction from './index';
+import toFraction from './';
 
 it('toFraction', () => {
   expect(toFraction(1, 2)).toEqual([1, 2]);

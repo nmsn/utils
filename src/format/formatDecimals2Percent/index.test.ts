@@ -1,4 +1,4 @@
-import formatDecimals2Percent from './index';
+import formatDecimals2Percent from './';
 
 it('formatDecimals2Percent', () => {
   expect(formatDecimals2Percent(0)).toBe('0');

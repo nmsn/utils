@@ -1,4 +1,4 @@
-import arr2Obj from './index';
+import arr2Obj from './';
 
 it('arr2Obj', () => {
   expect(

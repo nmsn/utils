@@ -26,4 +26,4 @@ const flag: boolean = isObj(param: unknown);
 
 | 参数 | 说明       | 类型      | 默认值  |
 | ---- | ---------- | --------- | ------- |
-| flag | 是否是对象 | `boolean` | `false` |
+| flag | 是否为 `Object` | `boolean` | `false` |

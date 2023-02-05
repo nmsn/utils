@@ -19,11 +19,11 @@ const flag: boolean = isMap(param: unknown);
 
 | 参数  | 说明 | 类型  | 默认值 |
 | ----- | ---- | ----- | ------ |
-| param | 参数 | `Map` | -      |
+| param | 参数 | `unknown` | -      |
 
 
 ### Result
 
 | 参数 | 说明         | 类型      | 默认值  |
 | ---- | ------------ | --------- | ------- |
-| flag | 是否是 'Map' | `boolean` | `false` |
+| flag | 是否为 `Map` | `boolean` | `false` |

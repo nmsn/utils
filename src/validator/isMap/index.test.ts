@@ -1,10 +1,10 @@
 import isMap from './';
 
 it('isMap', () => {
-  expect(isMap(null)).toBeFalsy();
-  expect(isMap(undefined)).toBeFalsy();
-  expect(isMap([])).toBeFalsy();
-  expect(isMap({})).toBeFalsy();
-  expect(isMap(new Map())).toBeTruthy();
-  expect(isMap(new Map([[1, 1]]))).toBeTruthy();
+  expect(isMap(null)).toBe(false);
+  expect(isMap(undefined)).toBe(false);
+  expect(isMap([])).toBe(false);
+  expect(isMap({})).toBe(false);
+  expect(isMap(new Map())).toBe(true);
+  expect(isMap(new Map([[1, 1]]))).toBe(true);
 });

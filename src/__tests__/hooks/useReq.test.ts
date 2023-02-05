@@ -1,4 +1,5 @@
-import { renderHook, act } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
+
 import useReq from '../../hooks/useReq';
 import { request } from '../hooks/useLoading.test';
 
@@ -16,7 +17,7 @@ describe('useLoading', () => {
 
   it('test useLoading', async () => {
     const hook = setUp({
-      service: request,
+      service: () => request({ flag: true, data: { a: 1 } }),
       onCallback: (data: any) => console.log(data),
       onErrCallback: (data: any) => console.log(data),
       onSuccessCallback: (data: any) => console.log(data),
@@ -40,7 +41,7 @@ describe('useLoading', () => {
 
     expect(hook.result.current.loading).toBe(false);
     expect(hook.result.current.isFirstLoading).toBe(false);
-    expect(hook.result.current.data).toEqual({});
+    expect(hook.result.current.data).toEqual({ a: 1 });
 
     act(() => {
       hook.result.current.exec({});
@@ -48,7 +49,7 @@ describe('useLoading', () => {
 
     expect(hook.result.current.loading).toBe(true);
     expect(hook.result.current.isFirstLoading).toBe(false);
-    expect(hook.result.current.data).toEqual({});
+    expect(hook.result.current.data).toEqual({ a: 1 });
 
     await act(async () => {
       jest.advanceTimersByTime(1000);
@@ -56,6 +57,6 @@ describe('useLoading', () => {
 
     expect(hook.result.current.loading).toBe(false);
     expect(hook.result.current.isFirstLoading).toBe(false);
-    expect(hook.result.current.data).toEqual({});
+    expect(hook.result.current.data).toEqual({ a: 1 });
   });
 });

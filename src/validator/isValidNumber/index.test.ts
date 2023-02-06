@@ -9,4 +9,5 @@ it('isValidNumber', () => {
   expect(isValidNumber('123.3')).toBe(false);
   expect(isValidNumber(undefined)).toBe(false);
   expect(isValidNumber(null)).toBe(false);
+  expect(isValidNumber(NaN)).toBe(false);
 });

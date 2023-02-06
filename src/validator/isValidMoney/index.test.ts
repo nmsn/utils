@@ -1,6 +1,6 @@
 import isValidMoney from './';
 
-it('isValidStr', () => {
+it('isValidMoney', () => {
   expect(isValidMoney('')).toBe(false);
   expect(isValidMoney('1')).toBe(true);
 });

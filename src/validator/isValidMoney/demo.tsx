@@ -6,7 +6,7 @@ export default () => {
   const result = isValidMoney(source);
 
   const source2 = 10000;
-  const result2 = isValidMoney(source);
+  const result2 = isValidMoney(source2);
   return (
     <div>
       <p>source: {JSON.stringify(source)}</p>

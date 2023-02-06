@@ -24,8 +24,8 @@ const flag: boolean = isValidEnumValue(value: number | string, options?: (string
 
 | 参数    | 说明       | 类型     | 默认值     |
 | ------- | ---------- | -------- | ---------- |
-| value   | 入參       | `number  | string`    | - |
-| options | 枚举值集合 | `(string | number)[]` | - |
+| value   | 入參       | `number  \| string`    | - |
+| options | 枚举值集合 | `(string \| number)[]` | - |
 
 
 ### Result

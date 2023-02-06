@@ -1,5 +1,5 @@
-const isValidNumber = (val: unknown): val is number => {
-  return typeof val === 'number' && !isNaN(val);
+const isValidNumber = (param: unknown): param is number => {
+  return typeof param === 'number' && !isNaN(param);
 };
 
 export default isValidNumber;

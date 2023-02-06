@@ -1,5 +1,5 @@
-const isValidString = (val: unknown): val is string => {
-  return typeof val === 'string' && val !== '';
+const isValidString = (param: unknown): param is string => {
+  return typeof param === 'string' && param !== '';
 };
 
 export default isValidString;

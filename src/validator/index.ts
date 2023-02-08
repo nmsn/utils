@@ -1,3 +1,4 @@
+export { default as isAsyncFunction } from './isAsyncFunction';
 export { default as isMap } from './isMap';
 export { default as isObj } from './isObj';
 export { default as isSameCharString } from './isSameCharString';

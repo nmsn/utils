@@ -1,5 +1,5 @@
-import React from 'react';
 import { toFraction } from '@nmsn/utils';
+import React from 'react';
 
 export default () => {
   const source = [5, 10];

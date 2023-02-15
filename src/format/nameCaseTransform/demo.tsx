@@ -1,5 +1,5 @@
-import React from 'react';
 import { nameCaseTransform } from '@nmsn/utils';
+import React from 'react';
 
 export default () => {
   const source = ['aAa', 'snake'];

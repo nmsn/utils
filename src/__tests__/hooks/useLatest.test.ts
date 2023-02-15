@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+
 import useLatest from '../../hooks/useLatest';
 
 const setUp = (val: any) => renderHook(state => useLatest(state), { initialProps: val });

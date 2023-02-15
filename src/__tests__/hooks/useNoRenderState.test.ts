@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+
 import useNoRenderState from '../../hooks/useNoRenderState';
 
 describe('useNoRenderState', () => {

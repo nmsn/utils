@@ -1,6 +1,6 @@
 const EMPTY_TEXT_MARK = '--';
 
-import { isValidString, isValidNumber } from '@/validator';
+import { isValidNumber, isValidString } from '@/validator';
 
 type Option = {
   emptyMark?: string;

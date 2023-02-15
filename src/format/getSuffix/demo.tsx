@@ -1,5 +1,5 @@
-import React from 'react';
 import { getSuffix } from '@nmsn/utils';
+import React from 'react';
 
 export default () => {
   const source = 'test.txt';

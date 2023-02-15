@@ -1,5 +1,5 @@
-import React from 'react';
 import { formatDecimals2Percent } from '@nmsn/utils';
+import React from 'react';
 
 export default () => {
   return (

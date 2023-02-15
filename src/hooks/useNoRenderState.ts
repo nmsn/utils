@@ -1,5 +1,5 @@
-import { useRef, useCallback } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
+import { useCallback, useRef } from 'react';
 
 type GetStateAction<S> = () => S;
 

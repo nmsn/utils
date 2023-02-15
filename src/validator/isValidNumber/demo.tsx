@@ -1,5 +1,6 @@
-import { isValidNumber } from '@nmsn/utils';
 import React from 'react';
+
+import { isValidNumber } from '@nmsn/utils';
 
 export default () => {
   const source = 1;

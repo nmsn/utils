@@ -1,5 +1,6 @@
-import { removeMultipleStrLeadingSpace } from '@nmsn/utils';
 import React from 'react';
+
+import { removeMultipleStrLeadingSpace } from '@nmsn/utils';
 
 export default () => {
   const source = `

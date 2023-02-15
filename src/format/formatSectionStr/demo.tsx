@@ -1,5 +1,6 @@
-import { formatSectionStr } from '@nmsn/utils';
 import React from 'react';
+
+import { formatSectionStr } from '@nmsn/utils';
 
 export default () => {
   return (

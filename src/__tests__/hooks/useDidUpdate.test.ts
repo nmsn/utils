@@ -1,5 +1,6 @@
-import { act, renderHook } from '@testing-library/react';
 import { useState } from 'react';
+
+import { act, renderHook } from '@testing-library/react';
 
 import useDidUpdate from '../../hooks/useDidUpdate';
 

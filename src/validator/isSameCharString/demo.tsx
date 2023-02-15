@@ -1,5 +1,6 @@
-import { isSameCharString } from '@nmsn/utils';
 import React from 'react';
+
+import { isSameCharString } from '@nmsn/utils';
 
 export default () => {
   const source = '***';

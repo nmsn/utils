@@ -1,5 +1,6 @@
-import { isValidEnumValue } from '@nmsn/utils';
 import React from 'react';
+
+import { isValidEnumValue } from '@nmsn/utils';
 
 export default () => {
   const source = [1];

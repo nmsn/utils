@@ -1,5 +1,6 @@
-import { arr2Obj } from '@nmsn/utils';
 import React from 'react';
+
+import { arr2Obj } from '@nmsn/utils';
 
 export default () => {
   const source = [

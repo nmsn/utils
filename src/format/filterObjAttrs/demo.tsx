@@ -1,5 +1,6 @@
-import { filterObjAttrs } from '@nmsn/utils';
 import React from 'react';
+
+import { filterObjAttrs } from '@nmsn/utils';
 
 export default () => {
   const source = { a: 1, b: 2, c: 3 };

@@ -1,5 +1,6 @@
-import { toValidDecimal } from '@nmsn/utils';
 import React from 'react';
+
+import { toValidDecimal } from '@nmsn/utils';
 
 export default () => {
   const source = [123.567, 2];

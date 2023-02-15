@@ -1,5 +1,6 @@
-import { isObj } from '@nmsn/utils';
 import React from 'react';
+
+import { isObj } from '@nmsn/utils';
 
 export default () => {
   const source = {};

@@ -1,5 +1,6 @@
-import { isValidObj } from '@nmsn/utils';
 import React from 'react';
+
+import { isValidObj } from '@nmsn/utils';
 
 export default () => {
   const source = {};

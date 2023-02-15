@@ -1,5 +1,6 @@
-import { isValidNaturalNumber } from '@nmsn/utils';
 import React from 'react';
+
+import { isValidNaturalNumber } from '@nmsn/utils';
 
 export default () => {
   const source = 1;

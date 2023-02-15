@@ -1,5 +1,6 @@
-import { addThousandSeparator } from '@nmsn/utils';
 import React from 'react';
+
+import { addThousandSeparator } from '@nmsn/utils';
 
 export default () => {
   return (

@@ -1,5 +1,6 @@
-import { isValidMap } from '@nmsn/utils';
 import React from 'react';
+
+import { isValidMap } from '@nmsn/utils';
 
 export default () => {
   const source = new Map([]);

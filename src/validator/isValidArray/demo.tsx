@@ -1,5 +1,6 @@
-import { isValidArray } from '@nmsn/utils';
 import React from 'react';
+
+import { isValidArray } from '@nmsn/utils';
 
 export default () => {
   const source = [1];

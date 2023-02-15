@@ -21,7 +21,7 @@
     }
   },
   "scripts": {
-    "lint": "eslint --fix --ext .ts,.tsx .",
+    "lint": "eslint --fix src/.",
     "test": "jest",
     "prepare": "husky install",
     "build": "rollup --config",

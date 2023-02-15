@@ -17,7 +17,13 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier', 'simple-import-sort'],
   rules: {
     'prettier/prettier': 'error',
-    'simple-import-sort/imports': 'error',
+    // 'simple-import-sort/imports': 'error',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [['^react'], ['^antd'], ['^@?\\w'], ['@/(.*)'], ['^[./]']],
+      },
+    ],
     'simple-import-sort/exports': 'error',
   },
 };

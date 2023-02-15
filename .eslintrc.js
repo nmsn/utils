@@ -21,7 +21,22 @@ module.exports = {
     'simple-import-sort/imports': [
       'error',
       {
-        groups: [['^react'], ['^antd'], ['^@?\\w'], ['@/(.*)'], ['^[./]']],
+        groups: [
+          // `react` first, `next` second, then packages starting with a character
+          ['^react$', '^next', '^[a-z]'],
+          // Packages starting with `@`
+          ['^@'],
+          // Packages starting with `~`
+          ['^~'],
+          // Imports starting with `../`
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // Imports starting with `./`
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // Style imports
+          ['^.+\\.s?css$'],
+          // Side effect imports
+          ['^\\u0000'],
+        ],
       },
     ],
     'simple-import-sort/exports': 'error',

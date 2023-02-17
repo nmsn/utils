@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import useLatest from '../../hooks/useLatest';
+import useLatest from './';
 
 const setUp = (val: any) => renderHook(state => useLatest(state), { initialProps: val });
 
@@ -9,13 +9,13 @@ describe('useLatest', () => {
     const { result, rerender } = setUp(0);
 
     rerender(1);
-    expect(result.current.current).toEqual(1);
+    expect(result.current.current).toBe(1);
 
     rerender(2);
-    expect(result.current.current).toEqual(2);
+    expect(result.current.current).toBe(2);
 
     rerender(3);
-    expect(result.current.current).toEqual(3);
+    expect(result.current.current).toBe(3);
   });
 
   it('useLatest with reference variable should work', async () => {

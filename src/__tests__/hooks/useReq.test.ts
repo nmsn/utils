@@ -25,7 +25,7 @@ describe('useLoading', () => {
 
     expect(hook.result.current.loading).toBe(false);
     expect(hook.result.current.isFirstLoading).toBe(false);
-    expect(hook.result.current.data).toEqual(null);
+    expect(hook.result.current.data).toBeNull();
 
     act(() => {
       hook.result.current.exec({});
@@ -33,7 +33,7 @@ describe('useLoading', () => {
 
     expect(hook.result.current.loading).toBe(true);
     expect(hook.result.current.isFirstLoading).toBe(true);
-    expect(hook.result.current.data).toEqual(null);
+    expect(hook.result.current.data).toBeNull();
 
     await act(async () => {
       jest.advanceTimersByTime(1000);

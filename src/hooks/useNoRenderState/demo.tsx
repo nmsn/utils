@@ -17,6 +17,7 @@ export default () => {
         add
       </button>
       <button
+        style={{ marginLeft: 8 }}
         onClick={() => {
           message.info(getNoRenderState());
         }}

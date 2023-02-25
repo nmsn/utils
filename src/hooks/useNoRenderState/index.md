@@ -5,7 +5,9 @@ toc: false
 
 # useNoRenderState
 
-用来存取不需要 `render` 刷新页面的数据
+用来存取不需要 `render` 刷新页面的数据，即使用 `useNoRenderState` 生成的 `setState` 执行不会导致组件重新渲染，同时需要使用生成的 `getState` 函数执行获取暂存数据
+
+目的是存取不需要展示的数据，从而节省性能
 
 <code src="./demo.tsx"></code>
 

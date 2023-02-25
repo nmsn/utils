@@ -14,8 +14,8 @@ export default () => {
 
   return (
     <>
-      <button onClick={() => setDep({ a: 1 })}>{JSON.stringify({ a: 1 })}</button>
-      <button onClick={() => setDep({ a: 2 })}>{JSON.stringify({ a: 2 })}</button>
+      <button onClick={() => setDep({ a: 1 })}>{`{ a: 1 }`}</button>
+      <button onClick={() => setDep({ a: 2 })} style={{ marginLeft: 8 }}>{`{ a: 2 }`}</button>
       <p>count: {count}</p>
     </>
   );

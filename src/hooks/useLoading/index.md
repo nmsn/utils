@@ -54,10 +54,10 @@ const { exec, loading, isFirstLoading } = useLoading<T = Record<string, any>, K 
 
 | 参数              | 说明               | 类型                                | 默认值                              |
 | ----------------- | ------------------ | ----------------------------------- | ----------------------------------- |
-| asyncFunc         | 执行函数           | `(params: K) => Promise<ResType<T>> | ResType<T>`                         | - |
+| asyncFunc         | 执行函数           | `(params: K) => Promise<ResType<T>> \| ResType<T>`                         | - |
 | onCallback        | 执行完的回调函数   | `(data: ResType<T>) => void`        | -                                   |
 | onSuccessCallback | 执行成功的回调函数 | `(data: T) => void`                 | -                                   |
-| onErrCallback     | 执行失败的回调函数 | `(errorCode?: number                | string, errorMsg?: string) => void` | - |
+| onErrCallback     | 执行失败的回调函数 | `(errorCode?: number                \| string, errorMsg?: string) => void` | - |
 
 ### Result
 
@@ -70,7 +70,7 @@ const { exec, loading, isFirstLoading } = useLoading<T = Record<string, any>, K 
 
 | 参数           | 说明                   | 类型                      | 默认值 |
 | -------------- | ---------------------- | ------------------------- | ------ |
-| exec           | 执行函数               | `(params: K) => Promise<T | null>` | - |
+| exec           | 执行函数               | `(params: K) => Promise<T \| null>` | - |
 | loading        | 是否是执行过程中       | `boolean`                 | -      |
 | isFirstLoading | 是否是第一次执行过程中 | `boolean`                 | -      |
 

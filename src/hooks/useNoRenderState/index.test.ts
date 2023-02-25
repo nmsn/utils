@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import useNoRenderState from '../../hooks/useNoRenderState';
+import useNoRenderState from '.';
 
 describe('useNoRenderState', () => {
   it('test useNoRenderState', async () => {

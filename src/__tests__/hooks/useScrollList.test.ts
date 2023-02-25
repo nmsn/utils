@@ -1,8 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { request } from '../../hooks/useLoading/index.test';
 import useScrollList from '../../hooks/useScrollList';
-
-import { request } from './useLoading.test';
 
 describe('useLoading', () => {
   beforeAll(() => {
@@ -13,12 +12,12 @@ describe('useLoading', () => {
     jest.useRealTimers();
   });
 
-  const setUp = ({ service, onCallback, onErrCallback, onSuccessCallback }: any) =>
-    renderHook(() => useScrollList({ service, onCallback, onErrCallback, onSuccessCallback }));
+  const setUp = ({ asyncFunc, onCallback, onErrCallback, onSuccessCallback }: any) =>
+    renderHook(() => useScrollList({ asyncFunc, onCallback, onErrCallback, onSuccessCallback }));
 
   it('test useLoading', async () => {
     const hook = setUp({
-      service: request,
+      asyncFunc: request,
       onCallback: (data: any) => console.log(data),
       onErrCallback: (data: any) => console.log(data),
       onSuccessCallback: (data: any) => console.log(data),

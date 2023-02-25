@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { request } from '../../hooks/useLoading/index.test';
 import useReq from '../../hooks/useReq';
-import { request } from '../hooks/useLoading.test';
 
 describe('useLoading', () => {
   beforeAll(() => {
@@ -12,12 +12,12 @@ describe('useLoading', () => {
     jest.useRealTimers();
   });
 
-  const setUp = ({ service, onCallback, onErrCallback, onSuccessCallback }: any) =>
-    renderHook(() => useReq({ service, onCallback, onErrCallback, onSuccessCallback }));
+  const setUp = ({ asyncFunc, onCallback, onErrCallback, onSuccessCallback }: any) =>
+    renderHook(() => useReq({ asyncFunc, onCallback, onErrCallback, onSuccessCallback }));
 
   it('test useLoading', async () => {
     const hook = setUp({
-      service: () => request({ flag: true, data: { a: 1 } }),
+      asyncFunc: () => request({ flag: true, data: { a: 1 } }),
       onCallback: (data: any) => console.log(data),
       onErrCallback: (data: any) => console.log(data),
       onSuccessCallback: (data: any) => console.log(data),

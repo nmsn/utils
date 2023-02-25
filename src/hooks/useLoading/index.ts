@@ -7,13 +7,13 @@ export type ResType<T> = {
   errorCode: number | string;
 };
 
-const useServiceCancel = <T, K>(service: (params: K) => Promise<ResType<T>> | ResType<T>) => {
+const useServiceCancel = <T, K>(asyncFunc: (params: K) => Promise<ResType<T>> | ResType<T>) => {
   let hasCanceled = false;
 
   const exec = async (params: K) => {
     try {
       // TODO 执行阶段 axios 的取消
-      const result = await service(params);
+      const result = await asyncFunc(params);
 
       if (hasCanceled) {
         console.warn('Request is canceled');
@@ -36,24 +36,29 @@ const useServiceCancel = <T, K>(service: (params: K) => Promise<ResType<T>> | Re
 };
 
 export type ReqParamType<T, K> = {
-  service: (params: K) => Promise<ResType<T>> | ResType<T>;
+  asyncFunc: (params: K) => Promise<ResType<T>> | ResType<T>;
   onCallback: (data: ResType<T>) => void;
   onSuccessCallback: (data: T) => void;
   onErrCallback?: (errorCode?: number | string, errorMsg?: string) => void;
-  extraParams?: Record<string, any>;
+};
+
+export type ReturnType<T, K> = {
+  exec: (params: K) => Promise<T | null>;
+  loading: boolean;
+  isFirstLoading: boolean;
 };
 
 const useLoading = <T = Record<string, any>, K = Record<string, any>>({
-  service,
+  asyncFunc,
   onCallback,
   onErrCallback,
   onSuccessCallback,
-}: ReqParamType<T, K>) => {
+}: ReqParamType<T, K>): ReturnType<T, K> => {
   const [loading, setLoading] = useState<boolean | null>(null);
 
   const [isFirstLoading, setIsFirstLoading] = useState(false);
 
-  const { exec: _service, cancel } = useServiceCancel<T, K>(service);
+  const { exec: _asyncFunc, cancel } = useServiceCancel<T, K>(asyncFunc);
 
   useEffect(
     () => () => {
@@ -72,7 +77,7 @@ const useLoading = <T = Record<string, any>, K = Record<string, any>>({
         return true;
       });
 
-      const { data, flag, errorMsg, errorCode } = await _service({ ...params });
+      const { data, flag, errorMsg, errorCode } = await _asyncFunc({ ...params });
 
       setLoading(false);
       setIsFirstLoading(false);

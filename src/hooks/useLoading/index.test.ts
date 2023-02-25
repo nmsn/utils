@@ -31,12 +31,12 @@ describe('useLoading', () => {
     jest.useRealTimers();
   });
 
-  const setUp = ({ service, onCallback, onErrCallback, onSuccessCallback }: any) =>
-    renderHook(() => useLoading({ service, onCallback, onErrCallback, onSuccessCallback }));
+  const setUp = ({ asyncFunc, onCallback, onErrCallback, onSuccessCallback }: any) =>
+    renderHook(() => useLoading({ asyncFunc, onCallback, onErrCallback, onSuccessCallback }));
 
   it('test useLoading', async () => {
     const hook = setUp({
-      service: request,
+      asyncFunc: request,
       onCallback: (data: any) => console.log(data),
       onErrCallback: (data: any) => console.log(data),
       onSuccessCallback: (data: any) => console.log(data),

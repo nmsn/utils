@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useLoading from '../../hooks/useLoading';
+import useLoading from './';
 
 type ResType = {
   data: any;

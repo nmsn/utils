@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import useStateCallback from '../../hooks/useStateCallback';
+import useStateCallback from '.';
 
 describe('useStateCallback', () => {
   it('test useStateCallback', async () => {

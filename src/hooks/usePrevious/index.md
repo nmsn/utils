@@ -22,7 +22,7 @@ const prev = usePrevious(data: any);
 | data | 初始值 | `any` | -      |
 
 
-### Params
+### Result
 
 | 参数 | 说明       | 类型  | 默认值 |
 | ---- | ---------- | ----- | ------ |

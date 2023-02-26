@@ -14,19 +14,19 @@ toc: false
 ## API
 
 ```typescript
-const [getState, setState] = useNoRenderState(data: any);
+const [getState, setState] = useNoRenderState(data: T);
 ```
 
 ### Params
 
 | 参数 | 说明   | 类型  | 默认值 |
 | ---- | ------ | ----- | ------ |
-| data | 初始值 | `any` | -      |
+| data | 初始值 | `T` | -      |
 
 
 ### Params
 
 | 参数     | 说明            | 类型                  | 默认值 |
 | -------- | --------------- | --------------------- | ------ |
-| getState | 获取 state 函数 | `（）=> any`          | -      |
-| setState | 赋值 state 函数 | `(data: any) => void` | -      |
+| getState | 获取 state 函数 | `（）=> T`          | -      |
+| setState | 赋值 state 函数 | `(data: T) => void` | -      |

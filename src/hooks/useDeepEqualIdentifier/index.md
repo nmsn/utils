@@ -15,12 +15,11 @@ toc: false
 const flag = useDeepEqualIdentifier<T>(value: T): number;
 ```
 
-
 ### Params
 
 | 参数  | 说明   | 类型  | 默认值 |
 | ----- | ------ | ----- | ------ |
-| value | 依赖项 | `any` | -      |
+| value | 依赖项 | `T` | -      |
 
 ### Result
 

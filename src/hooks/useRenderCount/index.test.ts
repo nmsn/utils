@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import useRenderCount from '../../hooks/useRenderCount';
+import useRenderCount from './';
 
 /** get ref data when using it */
 describe('useRenderCount', () => {

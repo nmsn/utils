@@ -10,18 +10,18 @@ describe('useRenderCount', () => {
     const [count, isFirst] = result.current;
 
     expect(isFirst).toBe(true);
-    expect(count).toBe(1);
+    expect(count).toBe(0);
 
     rerender();
 
     const [count2, isFirst2] = result.current;
     expect(isFirst2).toBe(false);
-    expect(count2).toBe(2);
+    expect(count2).toBe(1);
 
     rerender();
 
     const [count3, isFirst3] = result.current;
     expect(isFirst3).toBe(false);
-    expect(count3).toBe(3);
+    expect(count3).toBe(2);
   });
 });

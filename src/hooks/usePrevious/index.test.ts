@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import usePrevious from '../../hooks/usePrevious';
+import usePrevious from './';
 
 describe('usePrevious', () => {
   it('test usePrevious', async () => {

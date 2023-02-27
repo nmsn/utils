@@ -1,23 +1,27 @@
 import { useState } from 'react';
 
-import useLoading, { ReqParamType } from './useLoading';
+import useLoading, { ReqParamType, ReturnType } from '../useLoading';
 
 type ResScrollListType<L> = {
   list: L[];
   hasNextPage: boolean;
   pageSize: number;
   pageNum: number;
+  isNoData: boolean;
 };
+
+type ScrollListReturnType<L, K> = ReturnType<ResScrollListType<L>, K> & ResScrollListType<L>;
 
 const useScrollList = <L, K>({
   asyncFunc,
   onCallback,
   onSuccessCallback,
   onErrCallback,
-}: ReqParamType<ResScrollListType<L>, K>) => {
+}: ReqParamType<ResScrollListType<L>, K>): ScrollListReturnType<L, K> => {
   const [list, setList] = useState<L[]>([] as L[]);
   const [hasNextPage, setHasNextPage] = useState(false);
   const [pageNum, setPageNum] = useState<number>(0);
+  const [pageSize, setPageSize] = useState<number>(0);
 
   const { exec, loading, isFirstLoading } = useLoading({
     asyncFunc,
@@ -33,17 +37,30 @@ const useScrollList = <L, K>({
         pageNum: pageNum + 1,
         ...params,
       });
-      const { list = [], hasNextPage = false, pageNum: innerPageNum = 0 } = result || {};
+      const {
+        list: newList = [],
+        hasNextPage = false,
+        pageNum: innerPageNum = 0,
+        pageSize: innerPageSize = 0,
+      } = result || {};
 
       setPageNum(innerPageNum);
+      setPageSize(innerPageSize);
       setHasNextPage(hasNextPage);
-      if (innerPageNum > 1) {
-        setList(pre => [...pre, ...list]);
-      } else {
-        setList(list);
-      }
+
+      const newResult = innerPageNum > 1 ? [...list, ...newList] : newList;
+      setList(newResult);
+
+      return Promise.resolve({
+        list: newResult,
+        hasNextPage,
+        pageNum,
+        pageSize,
+        isNoData: !list.length && !loading,
+      });
     } catch (err) {
       console.warn(err);
+      return Promise.reject(null);
     }
   };
 
@@ -54,8 +71,9 @@ const useScrollList = <L, K>({
     list,
     hasNextPage,
     pageNum,
+    pageSize,
     /** 没有数据的标志（且不在加载中） */
-    isNoDataFlag: !list.length && !loading,
+    isNoData: !list.length && !loading,
   };
 };
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useLoading, { ReqParamType } from './useLoading';
+import useLoading, { ReqParamType } from '../useLoading';
 
 const useReq = <T, K>({
   asyncFunc,

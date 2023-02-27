@@ -43,7 +43,7 @@ export default () => {
       <div>isFirstLoading: {isFirstLoading.toString()}</div>
       <div>hasNextPage: {hasNextPage.toString()}</div>
       <div>pageNum: {pageNum}</div>
-      <div>list: {list}</div>
+      <div>list: {JSON.stringify(list)}</div>
     </>
   );
 };

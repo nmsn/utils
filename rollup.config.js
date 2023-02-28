@@ -1,4 +1,5 @@
 // rollup.config.js
+import clear from 'rollup-plugin-clear';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
 
@@ -17,5 +18,13 @@ export default {
       format: 'cjs',
     },
   ],
-  plugins: [peerDepsExternal(), typescript(), commonjs(), nodeResolve()],
+  plugins: [
+    clear({
+      targets: ['dist'],
+    }),
+    peerDepsExternal(),
+    typescript(),
+    commonjs(),
+    nodeResolve(),
+  ],
 };

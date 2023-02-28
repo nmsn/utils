@@ -1,7 +1,7 @@
 {
   "name": "@nmsn/utils",
   "version": "0.2.0",
-  "description": "A daily utils function collection.",
+  "description": "A day-to-day utils function collection.",
   "keywords": [
     "tool function",
     "format",

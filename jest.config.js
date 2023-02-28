@@ -5,8 +5,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
-    '^lodash-es$': 'lodash',
+    '^lodash-es/(.*)$': '<rootDir>/node_modules/lodash/$1',
   },
-
   collectCoverage: true,
 };

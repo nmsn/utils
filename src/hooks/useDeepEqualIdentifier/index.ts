@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { isEqual } from 'lodash-es';
+import isEqual from 'lodash-es/isEqual';
 
 export const usePreviousValue = (value: any, initialValue = null) => {
   const cache = useRef(initialValue);

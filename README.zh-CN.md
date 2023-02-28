@@ -6,7 +6,7 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nmsn/utils)
 ![NPM bundle size](https://img.shields.io/bundlephobia/min/@nmsn/utils)
 
-English | [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
 ## 背景
 

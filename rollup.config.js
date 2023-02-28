@@ -1,6 +1,7 @@
 // rollup.config.js
 import clear from 'rollup-plugin-clear';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
 import commonjs from '@rollup/plugin-commonjs';
@@ -26,5 +27,6 @@ export default {
     typescript(),
     commonjs(),
     nodeResolve(),
+    terser(),
   ],
 };

@@ -20,5 +20,5 @@
     "declaration": true
   },
   "include": ["src/**/*", "typings.d.ts"],
-  "exclude": ["node_modules", "dist", "**/__tests__/**/*"]
+  "exclude": ["node_modules", "dist", "**/__tests__/**/*", "**/demo.tsx", "**/*.test.ts"]
 }

@@ -8,3 +8,5 @@ coverage/
 .dumi/tmp-production/
 
 docs-dist/
+
+release-toolbox.json

@@ -35,8 +35,8 @@ console.log(addThousandSeparator(1000));
 
 ## TODO
 
-- [] More Test Case.
-- [] More utils.
+- [ ] More Test Case.
+- [ ] More utils.
 
 ## Finished
 

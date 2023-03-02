@@ -33,17 +33,17 @@ import { addThousandSeparator } from '@nmsn/utils';
 console.log(addThousandSeparator(1000));
 ```
 
-## TODO
-
-- [ ] More Test Case.
-- [ ] More utils.
-
 ## Finished
 
 - [x] rollup
 - [x] jest
 - [x] typescript
 - [x] dumi doc
+
+## TODO
+
+- [ ] More Test Case.
+- [ ] More utils.
 
 ## Maintainers
 

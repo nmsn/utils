@@ -35,17 +35,17 @@ import { addThousandSeparator } from '@nmsn/utils';
 console.log(addThousandSeparator(1000));
 ```
 
-## 待开发
-
-- [ ] 完善测试用例
-- [ ] 更多工具函数
-
 ## 已完成
 
 - [x] rollup 打包
 - [x] jest
 - [x] typescript
 - [x] dumi 文档
+
+## 待开发
+
+- [ ] 完善测试用例
+- [ ] 更多工具函数
 
 ## 维护人员
 

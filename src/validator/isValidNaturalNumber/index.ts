@@ -1,8 +1,8 @@
-import { naturalNumber } from '@/regex';
+import regex from '@/regex';
 
 const isValidNaturalNumber = (num: number): num is number => {
   const numStr = num.toString();
-  if (naturalNumber.test(numStr)) {
+  if (regex.naturalNumber.test(numStr)) {
     return true;
   }
   return false;

@@ -1,7 +1,5 @@
-// rollup.config.js
 import clear from 'rollup-plugin-clear';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
 import commonjs from '@rollup/plugin-commonjs';
@@ -11,22 +9,26 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.esm.mjs',
+      file: 'es/index.js',
       format: 'esm',
     },
     {
-      file: 'dist/index.cjs.js',
+      file: 'lib/index.js',
       format: 'cjs',
+    },
+    {
+      file: 'dist/index.js',
+      format: 'umd',
+      name: '@nmsn/utils',
     },
   ],
   plugins: [
     clear({
-      targets: ['dist'],
+      targets: ['dist', 'lib', 'es'],
     }),
     peerDepsExternal(),
     typescript(),
     commonjs(),
     nodeResolve(),
-    terser(),
   ],
 };

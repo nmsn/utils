@@ -10,24 +10,27 @@
     "validator",
     "react hooks"
   ],
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.esm.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "unpkg": "./dist/index.js",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.mjs",
-      "types": "./dist/index.d.ts"
+      "require": "./lib/index.js",
+      "import": "./es/index.js",
+      "types": "./es/index.d.ts"
     }
   },
   "scripts": {
     "lint": "eslint --fix src/.",
     "test": "jest",
     "prepare": "husky install",
-    "build": "rollup --config",
+    "build": "rollup -c",
+    "build:dev": "rollup -c -w rollup.config.dev.js",
+    "build:prod": "rollup -c rollup.config.prod.js",
     "dumi:dev": "dumi dev",
     "dumi:build": "dumi build",
-    "release": "npm run build && rltb"
+    "release": "npm run build:prod && rltb"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,8 @@
 node_modules/
 .eslintcache
 dist/
+lib/
+es/
 coverage/
 
 .dumi/tmp/

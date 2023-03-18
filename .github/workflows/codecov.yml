@@ -16,10 +16,10 @@ jobs:
         node-version: 16.x
 
     - name: "Install"
-      run: npm install
+      run: npm ci
 
     - name: "Run test"
-      run: npm run test
+      run: npm test
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3

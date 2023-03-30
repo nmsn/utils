@@ -32,7 +32,7 @@ type ReturnType<T, K> = {
   isFirstLoading: boolean;
 };
 
-const { data, exec, loading, isFirstLoading } = useReq<T = Record<string, any>, K = Record<string, any>>({ asyncFunc, onCallback, onSuccessCallback, onErrCallback }: ReqParamType<T, K>):  ReturnType<T, K>;
+const { data, exec, loading, isFirstLoading } = useReq<T = Record<string, any>, K = Record<string, any>>({ asyncFunc, onCallback, onSuccessCallback, onErrCallback }: ReqParamType<T, K>): ReturnType<T, K>;
 ```
 
 ### Params

@@ -5,8 +5,6 @@ toc: false
 
 # useMemoizedFn
 
-> 来源：https://ahooks.js.org/zh-CN/hooks/use-memoized-fn
-
 持久化 function 的 Hook，理论上，可以使用 useMemoizedFn 完全代替 useCallback。
 
 在某些场景中，我们需要使用 useCallback 来记住一个函数，但是在第二个参数 deps 变化时，会重新生成函数，导致函数地址变化。
@@ -58,3 +56,5 @@ const fn = useMemoizedFn<T>(fn: T): T;
 | 参数 | 说明             | 类型                      | 默认值 |
 | ---- | ---------------- | ------------------------- | ------ |
 | fn   | 需要持久化的函数 | `(...args: any[]) => any` | -      |
+
+> 来源：https://ahooks.js.org/zh-CN/hooks/use-memoized-fn

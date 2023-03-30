@@ -12,3 +12,4 @@ export { default as useScrollList } from './useScrollList';
 export { default as useStateCallback } from './useStateCallback';
 export { default as useUniqueKey } from './useUniqueKey';
 export { default as useUnmount } from './useUnmount';
+export { default as useUpdate } from './useUpdate';

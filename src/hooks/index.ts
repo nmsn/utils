@@ -1,3 +1,4 @@
+export { default as useClickAway } from './useClickAway';
 export { default as useDeepEqualIdentifier } from './useDeepEqualIdentifier';
 export { default as useDidUpdate } from './useDidUpdate';
 export { default as useLatest } from './useLatest';

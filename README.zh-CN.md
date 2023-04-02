@@ -47,9 +47,6 @@ console.log(addThousandSeparator(1000));
 
 - [ ] 完善测试用例
 - [ ] 更多工具函数
-- [ ] hooks
-  - [ ] 控制 url 参数暂存
-  - [ ] 元素点击外部事件
 
 ## 维护人员
 

@@ -45,9 +45,6 @@ console.log(addThousandSeparator(1000));
 
 - [ ] More Test Case.
 - [ ] More utils.
-- [ ] hooks
-  - [ ] cache url params
-  - [ ] dom outer click listener
 ## Maintainers
 
 [@nmsn](https://github.com/nmsn/utils)

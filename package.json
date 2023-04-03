@@ -84,6 +84,10 @@
   },
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "lib",
+    "es",
+    "package.json",
+    "README.md"
   ]
 }

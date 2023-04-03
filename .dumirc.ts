@@ -4,12 +4,11 @@ export default defineConfig({
   themeConfig: {
     name: 'Utils',
     nav: [
-      // { title: '指南', link: '/guide/test' },
       // TODO 目前木知道如何跳转直接导航到目录下第一个，先固定跳转路由
-      { title: 'Hooks', link: '/hooks/useDeepEqualIdentifier' },
-      { title: 'Format', link: '/formats/addThousandSeparator' },
-      { title: 'Validator', link: '/validators/isAsyncFunction' },
-      { title: 'GitHub', link: 'https://github.com/nmsn/utils.git' },
+      { title: '指南', link: '/guide' },
+      { title: 'Hooks', link: '/hooks/useClickAway' },
+      { title: '转换', link: '/formats/addThousandSeparator' },
+      { title: '校验', link: '/validators/isAsyncFunction' },
     ],
     footer: `Copyright © ${new Date().getFullYear()} nmsn`,
   },
@@ -24,4 +23,3 @@ export default defineConfig({
     forceKebabCaseRouting: false,
   },
 });
-

@@ -47,8 +47,6 @@
     "@commitlint/config-conventional": "^17.4.4",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.0",
     "@types/lodash-es": "^4.17.7",

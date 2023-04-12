@@ -24,7 +24,7 @@ const [getState, setState] = useNoRenderState(data: T);
 | data | 初始值 | `T` | -      |
 
 
-### Params
+### Result
 
 | 参数     | 说明            | 类型                  | 默认值 |
 | -------- | --------------- | --------------------- | ------ |

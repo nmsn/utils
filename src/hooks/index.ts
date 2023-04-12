@@ -6,6 +6,7 @@ export { default as useLoading } from './useLoading';
 export { default as useMemoizedFn } from './useMemoizedFn';
 export { default as useMount } from './useMount';
 export { default as useNoRenderState } from './useNoRenderState';
+export { default as useOpen } from './useOpen';
 export { default as usePrevious } from './usePrevious';
 export { default as useRenderCount } from './useRenderCount';
 export { default as useReq } from './useReq';

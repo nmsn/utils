@@ -11,8 +11,9 @@ export default defineConfig({
       { title: '校验', link: '/validators/isAsyncFunction' },
     ],
     footer: `Copyright © ${new Date().getFullYear()} nmsn`,
-    logo: false,
+    logo: '/logo.png',
   },
+  favicons: ['/logo.png'],
   outputPath: 'docs-dist',
   resolve: {
     atomDirs: [

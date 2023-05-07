@@ -1,5 +1,6 @@
 export { default as addThousandSeparator } from './addThousandSeparator';
 export { default as arr2Obj } from './arr2Obj';
+export { default as desensitizeMobile } from './desensitizeMobile';
 export { default as displayWithUnit } from './displayWithUnit';
 export { default as filterObjAttrs } from './filterObjAttrs';
 export { default as formatDecimals2Percent } from './formatDecimals2Percent';

@@ -1,5 +1,5 @@
 /** 下载文件 */
-const loadFile = (fileUrl: string, name?: string) => {
+const downloadFile = (fileUrl: string, name?: string) => {
   fetch(fileUrl)
     .then(res => res.blob())
     .then(blob => {
@@ -19,4 +19,4 @@ const loadFile = (fileUrl: string, name?: string) => {
     });
 };
 
-export default loadFile;
+export default downloadFile;

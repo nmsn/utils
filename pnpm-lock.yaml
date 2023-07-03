@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -24,7 +24,7 @@ devDependencies:
     version: 17.6.5
   '@rollup/plugin-commonjs':
     specifier: ^25.0.0
-    version: 25.0.0(rollup@2.79.1)
+    version: 25.0.2(rollup@2.79.1)
   '@rollup/plugin-node-resolve':
     specifier: ^15.1.0
     version: 15.1.0(rollup@2.79.1)
@@ -2262,8 +2262,8 @@ packages:
     engines: {node: '>=14'}
     dev: false
 
-  /@rollup/plugin-commonjs@25.0.0(rollup@2.79.1):
-    resolution: {integrity: sha512-hoho2Kay9TZrLu0bnDsTTCaj4Npa+THk9snajP/XDNb9a9mmjTjh52EQM9sKl3HD1LsnihX7js+eA2sd2uKAhw==}
+  /@rollup/plugin-commonjs@25.0.2(rollup@2.79.1):
+    resolution: {integrity: sha512-NGTwaJxIO0klMs+WSFFtBP7b9TdTJ3K76HZkewT8/+yHzMiUGVQgaPtLQxNVYIgT5F7lxkEyVID+yS3K7bhCow==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0

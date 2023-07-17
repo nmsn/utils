@@ -1,4 +1,4 @@
-import { act, fireEvent, renderHook } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 
 import useClickAway from './index';
 

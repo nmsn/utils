@@ -18,6 +18,7 @@ const useMergeValue = <T>(
   const prevPropsValue = usePrevious(value);
 
   const [stateValue, setStateValue] = useState<T>(
+    // 初始化值的逻辑
     (() => {
       if (!isUndefined(value)) {
         return value;
@@ -31,6 +32,7 @@ const useMergeValue = <T>(
     })(),
   );
 
+  // 清除数据的逻辑
   useEffect(() => {
     if (firstRenderRef.current) {
       firstRenderRef.current = false;

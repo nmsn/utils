@@ -5,6 +5,7 @@ export { default as useInView } from './useInView';
 export { default as useLatest } from './useLatest';
 export { default as useLoading } from './useLoading';
 export { default as useMemoizedFn } from './useMemoizedFn';
+export { default as useMergeValue } from './useMergeValue';
 export { default as useMount } from './useMount';
 export { default as useNoRenderState } from './useNoRenderState';
 export { default as useOpen } from './useOpen';

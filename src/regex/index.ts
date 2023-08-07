@@ -14,6 +14,8 @@ const thousand = /\B(?=(\d{3})+(?!\d))/g;
 
 const suffix = /(\.)(\w+)$/;
 
+const inputNumber = /^[+-]?(\d|[1-9]\d+)(\.\d+)?$/;
+
 const regex = {
   cnName,
   money,
@@ -23,6 +25,7 @@ const regex = {
   mobile,
   thousand,
   suffix,
+  inputNumber,
 };
 
 export default regex;
